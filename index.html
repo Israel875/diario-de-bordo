@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1a1a2e" />
+  <meta name="description" content="Registre suas atividades diárias com o Diário de Bordo" />
+  <title>Diário de Bordo</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="install-banner" class="install-banner hidden">
+    <span>📲 Instalar o Diário de Bordo no seu dispositivo?</span>
+    <button id="btn-install">Instalar</button>
+    <button id="btn-dismiss">✕</button>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-icon">✦</span>
+        <h1>Diário de Bordo</h1>
+      </div>
+      <span class="offline-badge" id="offline-badge">offline</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="form-section">
+      <h2>Nova Entrada</h2>
+      <form id="form-entrada">
+        <div class="field">
+          <label for="titulo">Título</label>
+          <input type="text" id="titulo" placeholder="O que aconteceu hoje?" required />
+        </div>
+        <div class="field">
+          <label for="data">Data</label>
+          <input type="date" id="data" required />
+        </div>
+        <div class="field">
+          <label for="descricao">Descrição</label>
+          <textarea id="descricao" rows="4" placeholder="Descreva sua atividade..." required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">+ Registrar Entrada</button>
+      </form>
+    </section>
+
+    <section class="list-section">
+      <div class="list-header">
+        <h2>Entradas</h2>
+        <span id="contador" class="contador">0 registros</span>
+      </div>
+      <div id="lista-entradas" class="lista-entradas">
+        <div class="empty-state" id="empty-state">
+          <span class="empty-icon">📖</span>
+          <p>Nenhuma entrada registrada ainda.</p>
+          <p>Comece adicionando sua primeira atividade!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
